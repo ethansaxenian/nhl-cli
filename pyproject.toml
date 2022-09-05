@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "nhl-cli"
+version = "0.1.0"
+description = "A command-line interface for the public NHL API"
+authors = ["Ethan Saxenian <ethansaxenian@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+packages = [{include = "nhl-cli"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
