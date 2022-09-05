@@ -6,10 +6,16 @@ authors = ["Ethan Saxenian <ethansaxenian@gmail.com>"]
 readme = "README.md"
 license = "MIT"
 packages = [{include = "nhl-cli"}]
+repository = "https://github.com/ethansaxenian/nhl-cli"
+homepage = "https://github.com/ethansaxenian/nhl-cli"
 
 [tool.poetry.dependencies]
 python = "^3.9"
+typer = "^0.6.1"
 
+[tool.poetry.group.dev.dependencies]
+black = "^22.8.0"
+flake8 = "^5.0.4"
 
 [build-system]
 requires = ["poetry-core"]
