@@ -12,6 +12,7 @@ homepage = "https://github.com/ethansaxenian/nhl-cli"
 [tool.poetry.dependencies]
 python = "^3.9"
 typer = "^0.6.1"
+requests = "^2.28.1"
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.8.0"
