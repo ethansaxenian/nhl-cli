@@ -2,7 +2,13 @@ from typing import Optional
 
 import typer
 
-from nhl.utils.globals import ExpandOption, PrettyFormat, SeasonOption, SortKeys
+from nhl.utils.globals import (
+    ExpandOption,
+    NoColors,
+    PrettyFormat,
+    SeasonOption,
+    SortKeys,
+)
 from nhl.utils.helpers import fetch, print_response
 
 TeamId = typer.Argument(
@@ -31,6 +37,7 @@ def get_teams(
     stats: bool = StatsOption,
     pretty: bool = PrettyFormat,
     sort_keys: bool = SortKeys,
+    no_colors: bool = NoColors,
 ):
     query_params = []
     for modifier in expand:
@@ -43,4 +50,4 @@ def get_teams(
     res = fetch(
         ["teams", id, "roster" if roster else "stats" if stats else ""], query_params
     )
-    print_response(res, pretty=pretty, sort_keys=sort_keys)
+    print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
