@@ -11,11 +11,12 @@ app = typer.Typer(name="nhl", help="An NHL API CLI", add_completion=False)
 @app.command()
 def teams(
     id: str = typer.Argument(
-        "",
-        help="Returns information for a single team instead of the entire league.",
+        "", help="Returns information for a single team instead of the entire league."
     ),
     expand: list[str] = typer.Option([], help="See nhl expands for details."),
-    season: Optional[str] = typer.Option(None, help="Specify the season."),
+    season: Optional[str] = typer.Option(
+        None, help="Specify the season.", show_default="Uses the current season"
+    ),
     team_id: list[str] = typer.Option(
         [], "--teamId", help="Can specify multiple team ids."
     ),
@@ -55,7 +56,7 @@ def teams(
 @app.command()
 def franchises(
     id: str = typer.Argument(
-        default="", help="The ID of the franchise.", show_default="Gets all franchises."
+        "", help="Returns information for a single team instead of the entire league."
     ),
     pretty: bool = PrettyFormat,
     sort_keys: bool = SortKeys,
@@ -63,7 +64,7 @@ def franchises(
     """
     Get information about NHL franchises.
     """
-    res = fetch(f"franchises/{id}")
+    res = fetch(f"franchises/{id}", [])
     print_response(res, pretty=pretty, sort_keys=sort_keys)
 
 

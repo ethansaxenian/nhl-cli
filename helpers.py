@@ -8,7 +8,7 @@ API_BASE_URL = "https://statsapi.web.nhl.com/api/v1"
 QueryArgs = list[tuple[str, str]]
 
 
-def fetch(endpoint: str, query_args: QueryArgs = None, *paths) -> Response:
+def fetch(endpoint: str, query_args: QueryArgs, *paths) -> Response:
     path_str = "/".join(paths)
     query_str = "&".join([f"{k}={v}" for k, v in query_args])
     url = f"{API_BASE_URL}/{endpoint}/{path_str}?{query_str}"
