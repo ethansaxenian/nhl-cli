@@ -5,6 +5,7 @@ from nhl.endpoints import (
     configurations,
     divisions,
     franchises,
+    seasons,
     teams,
     tournaments,
 )
@@ -19,6 +20,7 @@ app.add_typer(configurations.app, name="configurations")
 app.add_typer(divisions.app, name="divisions")
 app.add_typer(franchises.app, name="franchises")
 app.add_typer(teams.app, name="teams")
+app.add_typer(seasons.app, name="seasons")
 app.add_typer(tournaments.app, name="tournaments")
 
 
