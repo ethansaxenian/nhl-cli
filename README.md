@@ -9,7 +9,7 @@ Clone the repository and run `poetry install`.
 You can now run the program with `poetry run nhl`. Alternatively, running `poetry shell` will enter the virtual environment where the `nhl` executable should be available.
 
 
-### Acknowledgements
+## Acknowledgements
 
 Many thanks to https://gitlab.com/dword4/nhlapi for providing documentation.
 
