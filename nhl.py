@@ -11,7 +11,8 @@ app = typer.Typer(name="nhl", help="An NHL API CLI", add_completion=False)
 @app.command()
 def teams(
     id: str = typer.Argument(
-        "", help="The ID of the team.", show_default="Gets all teams."
+        "",
+        help="Returns information for a single team instead of the entire league.",
     ),
     expand: list[str] = typer.Option([], help="See nhl expands for details."),
     season: Optional[str] = typer.Option(None, help="Specify the season."),
@@ -21,12 +22,12 @@ def teams(
     roster: bool = typer.Option(
         False,
         "--roster",
-        help="Returns entire roster for a team including id value, name, jersey number and position details.",
+        help="Include the entire roster of a team.",
     ),
     stats: bool = typer.Option(
         False,
         "--stats",
-        help="Returns current season stats and the current season rankings for a specific team.",
+        help="Include current season stats and the current season rankings for a specific team.",
     ),
     pretty: bool = PrettyFormat,
     sort_keys: bool = SortKeys,

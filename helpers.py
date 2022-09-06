@@ -12,7 +12,6 @@ def fetch(endpoint: str, query_args: QueryArgs = None, *paths) -> Response:
     path_str = "/".join(paths)
     query_str = "&".join([f"{k}={v}" for k, v in query_args])
     url = f"{API_BASE_URL}/{endpoint}/{path_str}?{query_str}"
-    print(url)
     return requests.get(url)
 
 
