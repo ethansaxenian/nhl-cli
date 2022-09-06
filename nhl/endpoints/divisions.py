@@ -17,5 +17,5 @@ def divisions(
     sort_keys: bool = SortKeys,
     no_colors: bool = NoColors,
 ):
-    res = fetch(["divisions", id], [("expand", modifier) for modifier in expand])
+    res = fetch(f"divisions/{id}", [("expand", modifier) for modifier in expand])
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)

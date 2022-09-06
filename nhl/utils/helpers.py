@@ -4,7 +4,7 @@ from typing import Optional
 import requests
 from requests import Response
 
-API_BASE_URL = "https://statsapi.web.nhl.com/api/v1"
+API_BASE_URL = "https://statsapi.web.nhl.com/api/v1/"
 
 QueryArgs = list[tuple[str, str]]
 
@@ -21,10 +21,11 @@ def echo(message: str, disable_rich_output: bool = True):
         print(message)
 
 
-def fetch(paths: list[str], query_args: Optional[QueryArgs] = None) -> Response:
-    path_str = "/".join(paths)
-    query_str = "&".join([f"{k}={v}" for k, v in query_args]) if query_args else ""
-    url = f"{API_BASE_URL}/{path_str}?{query_str}"
+def fetch(path: str, query_args: Optional[QueryArgs] = None) -> Response:
+    query_str = (
+        ("?" + "&".join([f"{k}={v}" for k, v in query_args])) if query_args else ""
+    )
+    url = f"{API_BASE_URL}{path}{query_str}"
     return requests.get(url)
 
 

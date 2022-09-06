@@ -14,7 +14,7 @@ def configurations(
     no_colors: bool = NoColors,
 ):
     if ctx.invoked_subcommand is None:
-        res = fetch(["configurations"])
+        res = fetch("configurations")
         print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -22,7 +22,7 @@ def configurations(
 def image_sizes(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["imageSizes"])
+    res = fetch("imageSizes")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -30,7 +30,7 @@ def image_sizes(
 def roster_types(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["rosterTypes"])
+    res = fetch("rosterTypes")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -38,7 +38,7 @@ def roster_types(
 def site_language(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["siteLanguage"])
+    res = fetch("siteLanguage")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -46,7 +46,7 @@ def site_language(
 def team_designations(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["teamDesignations"])
+    res = fetch("teamDesignations")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -54,7 +54,7 @@ def team_designations(
 def roster_statuses(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["rosterStatuses"])
+    res = fetch("rosterStatuses")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -62,7 +62,7 @@ def roster_statuses(
 def event_types(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["eventTypes"])
+    res = fetch("eventTypes")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -70,7 +70,7 @@ def event_types(
 def tournament_types(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["tournamentTypes"])
+    res = fetch("tournamentTypes")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -78,7 +78,7 @@ def tournament_types(
 def prospect_categories(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["prospectCategories"])
+    res = fetch("prospectCategories")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -86,7 +86,7 @@ def prospect_categories(
 def languages(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["languages"])
+    res = fetch("languages")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -94,7 +94,7 @@ def languages(
 def stat_types(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["statTypes"])
+    res = fetch("statTypes")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -102,7 +102,7 @@ def stat_types(
 def standings_types(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["standingsTypes"])
+    res = fetch("standingsTypes")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -110,7 +110,7 @@ def standings_types(
 def game_status(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["gameStatus"])
+    res = fetch("gameStatus")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -118,7 +118,7 @@ def game_status(
 def play_types(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["playTypes"])
+    res = fetch("playTypes")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -126,7 +126,7 @@ def play_types(
 def play_types_player(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["playTypesPlayer"])
+    res = fetch("playTypesPlayer")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -134,7 +134,7 @@ def play_types_player(
 def positions(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["positions"])
+    res = fetch("positions")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -142,7 +142,7 @@ def positions(
 def platforms(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["platforms"])
+    res = fetch("platforms")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -150,7 +150,7 @@ def platforms(
 def power_play_strength(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["powerPlayStrength"])
+    res = fetch("powerPlayStrength")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -158,7 +158,7 @@ def power_play_strength(
 def league_leader_types(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["leagueLeaderTypes"])
+    res = fetch("leagueLeaderTypes")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -166,7 +166,7 @@ def league_leader_types(
 def depth_types(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["depthTypes"])
+    res = fetch("depthTypes")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -174,7 +174,7 @@ def depth_types(
 def image_types(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["imageTypes"])
+    res = fetch("imageTypes")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -182,7 +182,7 @@ def image_types(
 def game_types(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["gameTypes"])
+    res = fetch("gameTypes")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -190,7 +190,7 @@ def game_types(
 def series_codes(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["seriesCodes"])
+    res = fetch("seriesCodes")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -198,7 +198,7 @@ def series_codes(
 def player_status(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["playerStatus"])
+    res = fetch("playerStatus")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -206,7 +206,7 @@ def player_status(
 def expands(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["expands"])
+    res = fetch("expands")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -214,7 +214,7 @@ def expands(
 def schedule_types(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["scheduleTypes"])
+    res = fetch("scheduleTypes")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
 
 
@@ -222,5 +222,5 @@ def schedule_types(
 def performer_types(
     pretty: bool = PrettyFormat, sort_keys: bool = SortKeys, no_colors: bool = NoColors
 ):
-    res = fetch(["performerTypes"])
+    res = fetch("performerTypes")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)

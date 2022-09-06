@@ -17,5 +17,5 @@ def franchises(
     sort_keys: bool = SortKeys,
     no_colors: bool = NoColors,
 ):
-    res = fetch(["franchises", id])
+    res = fetch(f"franchises/{id}")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)

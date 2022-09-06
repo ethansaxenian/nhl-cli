@@ -27,5 +27,5 @@ def tournaments(
     if season is not None:
         query_params.append(("season", season))
 
-    res = fetch(["tournaments", "playoffs"], query_params)
+    res = fetch("tournaments/playoffs", query_params)
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)

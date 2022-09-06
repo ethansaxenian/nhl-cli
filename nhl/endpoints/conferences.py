@@ -15,5 +15,5 @@ def conferences(
     sort_keys: bool = SortKeys,
     no_colors: bool = NoColors,
 ):
-    res = fetch(["conferences", id])
+    res = fetch(f"conferences/{id}")
     print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
