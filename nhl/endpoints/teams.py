@@ -2,14 +2,17 @@ from typing import Optional
 
 import typer
 
-from nhl.utils.globals import (
+from nhl.utils.expands import TeamExpands
+from nhl.utils.helpers import fetch, print_response
+from nhl.utils.options import (
     ExpandOption,
     NoColors,
     PrettyFormat,
     SeasonOption,
     SortKeys,
 )
-from nhl.utils.helpers import fetch, print_response
+
+app = typer.Typer(help="Get information about NHL teams.")
 
 TeamId = typer.Argument(
     "", help="Returns information for a single team instead of the entire league."
@@ -28,9 +31,10 @@ StatsOption = typer.Option(
 )
 
 
-def get_teams(
+@app.callback(invoke_without_command=True)
+def teams(
     id: str = TeamId,
-    expand: list[str] = ExpandOption,
+    expand: list[TeamExpands] = ExpandOption,
     season: Optional[str] = SeasonOption,
     team_id: list[str] = TeamIdOption,
     roster: bool = RosterOption,

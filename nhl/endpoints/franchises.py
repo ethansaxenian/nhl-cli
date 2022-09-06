@@ -1,14 +1,17 @@
 import typer
 
-from nhl.utils.globals import NoColors, PrettyFormat, SortKeys
 from nhl.utils.helpers import fetch, print_response
+from nhl.utils.options import NoColors, PrettyFormat, SortKeys
+
+app = typer.Typer(help="Get information about NHL franchises.")
 
 FranchiseId = typer.Argument(
     "", help="Returns information for a single team instead of the entire league."
 )
 
 
-def get_franchises(
+@app.callback(invoke_without_command=True)
+def franchises(
     id: str = FranchiseId,
     pretty: bool = PrettyFormat,
     sort_keys: bool = SortKeys,
