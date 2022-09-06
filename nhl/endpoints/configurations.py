@@ -1,3 +1,8 @@
+"""
+
+This module contains commands for all endpoints listed at /api/vi/configurations
+
+"""
 import typer
 
 from nhl.utils.helpers import fetch, print_response
