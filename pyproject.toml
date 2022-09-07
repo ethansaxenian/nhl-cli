@@ -8,6 +8,7 @@ license = "MIT"
 packages = [{include = "nhl"}]
 repository = "https://github.com/ethansaxenian/nhl-cli"
 homepage = "https://github.com/ethansaxenian/nhl-cli"
+documentation = "https://github.com/ethansaxenian/nhl-cli/blob/main/DOCS.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
