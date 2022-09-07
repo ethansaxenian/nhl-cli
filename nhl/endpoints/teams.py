@@ -1,9 +1,8 @@
-from typing import Optional
-
 import typer
 
+from nhl.utils.constants import DEFAULT_SEASON, SeasonType
 from nhl.utils.expands import TeamExpands
-from nhl.utils.helpers import fetch, print_response
+from nhl.utils.helpers import fetch, print_response, season_to_str
 from nhl.utils.options import (
     ExpandOption,
     NoColors,
@@ -21,10 +20,8 @@ def teams(
         "", help="Returns information for a single team instead of the entire league."
     ),
     expand: list[TeamExpands] = ExpandOption,
-    season: Optional[str] = SeasonOption,
-    team_id: list[str] = typer.Option(
-        [], "--teamId", help="Can specify multiple team ids."
-    ),
+    season: SeasonType = SeasonOption,
+    team_id: list[str] = typer.Option([], help="Can specify multiple team ids."),
     roster: bool = typer.Option(
         False, "--roster", help="Include the entire roster of a team."
     ),
@@ -50,8 +47,8 @@ def teams(
         query_params.append(("expand", modifier))
     if len(team_id) > 0:
         query_params.append(("teamId", ",".join(team_id)))
-    if season is not None:
-        query_params.append(("season", season))
+    if season != DEFAULT_SEASON:
+        query_params.append(("season", season_to_str(season)))
 
     res = fetch(
         f"teams/{id}/{'roster' if roster else 'stats' if stats else ''}", query_params

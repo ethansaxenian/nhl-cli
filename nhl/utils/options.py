@@ -1,6 +1,7 @@
 import typer
 
 from nhl.utils.callbacks import validate_season
+from nhl.utils.constants import DEFAULT_SEASON, YEAR_FORMAT
 
 PrettyFormat = typer.Option(False, "--pretty", "-p", help="Format output.")
 
@@ -13,8 +14,9 @@ ExpandOption = typer.Option(
 )
 
 SeasonOption = typer.Option(
-    None,
-    help="Specify the season. Format: YYYYYYYY (ex: 20202021)",
-    show_default="Uses the current season",
-    callback=lambda val: validate_season(val),
+    DEFAULT_SEASON,
+    formats=[YEAR_FORMAT],
+    help="Specify the season.",
+    show_default="Uses the current season.",
+    callback=validate_season,
 )

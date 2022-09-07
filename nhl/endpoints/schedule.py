@@ -1,10 +1,11 @@
+from datetime import datetime
 from typing import Optional
 
 import typer
 
-from nhl.utils.callbacks import validate_date
+from nhl.utils.constants import DATE_FORMAT, DEFAULT_SEASON, SeasonType
 from nhl.utils.expands import ScheduleExpands
-from nhl.utils.helpers import fetch, print_response
+from nhl.utils.helpers import datetime_to_str, fetch, print_response, season_to_str
 from nhl.utils.options import (
     ExpandOption,
     NoColors,
@@ -19,22 +20,19 @@ app = typer.Typer(help="Get information about the schedule.")
 @app.callback(invoke_without_command=True)
 def schedule(
     expand: list[ScheduleExpands] = ExpandOption,
-    team_id: list[str] = typer.Option(
-        [], "--teamId", help="Limit results to a specific team(s)."
+    team_id: list[str] = typer.Option([], help="Limit results to a specific team(s)."),
+    date: Optional[datetime] = typer.Option(
+        None, formats=[DATE_FORMAT], help="Single defined date for the search."
     ),
-    date: Optional[str] = typer.Option(
-        None, help="Single defined date for the search.", callback=validate_date
+    start_date: Optional[datetime] = typer.Option(
+        None, formats=[DATE_FORMAT], help="Start date for the search."
     ),
-    start_date: Optional[str] = typer.Option(
-        None, "--startDate", help="Start date for the search.", callback=validate_date
+    end_date: Optional[datetime] = typer.Option(
+        None, formats=[DATE_FORMAT], help="End date for the search."
     ),
-    end_date: Optional[str] = typer.Option(
-        None, "--endDate", help="End date for the search.", callback=validate_date
-    ),
-    season: Optional[str] = SeasonOption,
+    season: SeasonType = SeasonOption,
     game_type: Optional[str] = typer.Option(
         None,
-        "--gameType",
         help="Restricts results to certain game types. See 'nhl configurations game-types' for options.",
         show_default="Includes all game types.",
     ),
@@ -46,10 +44,10 @@ def schedule(
     for modifier in expand:
         query_params.append(("expand", modifier))
     for name, option in [
-        ("date", date),
-        ("startDate", start_date),
-        ("endDate", end_date),
-        ("season", season),
+        ("date", datetime_to_str(date, DATE_FORMAT)),
+        ("startDate", datetime_to_str(start_date, DATE_FORMAT)),
+        ("endDate", datetime_to_str(end_date, DATE_FORMAT)),
+        ("season", season_to_str(season) if season != DEFAULT_SEASON else None),
         ("gameType", game_type),
     ]:
         if option:
