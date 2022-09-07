@@ -9,5 +9,5 @@ app = typer.Typer(help="List all possible draft prospect categories.")
 @app.callback(invoke_without_command=True, rich_help_panel="Configurations Commands")
 @include_common_params
 def prospect_categories(ctx: typer.Context):
-    res = fetch_with_ctx(ctx, f"prospectCategories")
+    res = fetch_with_ctx(ctx, "prospectCategories")
     print_response_with_ctx(ctx, res)

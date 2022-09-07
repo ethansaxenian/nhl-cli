@@ -9,5 +9,5 @@ app = typer.Typer(help="List all possible image sizes for the logos.")
 @app.callback(invoke_without_command=True, rich_help_panel="Configurations Commands")
 @include_common_params
 def image_sizes(ctx: typer.Context):
-    res = fetch_with_ctx(ctx, f"imageSizes")
+    res = fetch_with_ctx(ctx, "imageSizes")
     print_response_with_ctx(ctx, res)

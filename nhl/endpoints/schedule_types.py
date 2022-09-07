@@ -9,5 +9,5 @@ app = typer.Typer(help="List all possible schedule types.")
 @app.callback(invoke_without_command=True, rich_help_panel="Configurations Commands")
 @include_common_params
 def schedule_types(ctx: typer.Context):
-    res = fetch_with_ctx(ctx, f"scheduleTypes")
+    res = fetch_with_ctx(ctx, "scheduleTypes")
     print_response_with_ctx(ctx, res)

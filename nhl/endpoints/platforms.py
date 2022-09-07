@@ -9,5 +9,5 @@ app = typer.Typer(help="List all possible platforms.")
 @app.callback(invoke_without_command=True, rich_help_panel="Configurations Commands")
 @include_common_params
 def platforms(ctx: typer.Context):
-    res = fetch_with_ctx(ctx, f"platforms")
+    res = fetch_with_ctx(ctx, "platforms")
     print_response_with_ctx(ctx, res)

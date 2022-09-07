@@ -9,5 +9,5 @@ app = typer.Typer(help="List all support languages.")
 @app.callback(invoke_without_command=True, rich_help_panel="Configurations Commands")
 @include_common_params
 def languages(ctx: typer.Context):
-    res = fetch_with_ctx(ctx, f"languages")
+    res = fetch_with_ctx(ctx, "languages")
     print_response_with_ctx(ctx, res)

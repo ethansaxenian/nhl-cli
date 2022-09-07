@@ -56,5 +56,5 @@ def schedule(
     if len(team_id) > 0:
         query_params.append(("teamId", ",".join(team_id)))
 
-    res = fetch_with_ctx(ctx, f"schedule", query_params)
+    res = fetch_with_ctx(ctx, "schedule", query_params)
     print_response_with_ctx(ctx, res)
