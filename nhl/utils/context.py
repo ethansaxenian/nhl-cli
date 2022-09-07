@@ -28,7 +28,7 @@ def include_common_params(func: Callable) -> Callable:
             "en_US",
             "--locale",
             "-l",
-            help="Set the language of the output. See 'nhl site-languages for details'",
+            help="Set the language of the output. See 'nhl site-languages' for details",
         ),
         **kwargs,
     ):
