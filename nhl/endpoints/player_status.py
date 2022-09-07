@@ -9,5 +9,5 @@ app = typer.Typer(help="List all the player status options.")
 @app.callback(invoke_without_command=True, rich_help_panel="Configurations Commands")
 @include_common_params
 def player_status(ctx: typer.Context):
-    res = fetch_with_ctx(ctx, f"playerStatus")
+    res = fetch_with_ctx(ctx, "playerStatus")
     print_response_with_ctx(ctx, res)

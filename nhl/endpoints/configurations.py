@@ -9,5 +9,5 @@ app = typer.Typer(help="List all configuration endpoints.")
 @app.callback(invoke_without_command=True, rich_help_panel="Configurations Commands")
 @include_common_params
 def configurations(ctx: typer.Context):
-    res = fetch_with_ctx(ctx, f"configurations")
+    res = fetch_with_ctx(ctx, "configurations")
     print_response_with_ctx(ctx, res)

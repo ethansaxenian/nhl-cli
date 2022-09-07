@@ -9,5 +9,5 @@ app = typer.Typer(help="List all possible series codes.")
 @app.callback(invoke_without_command=True, rich_help_panel="Configurations Commands")
 @include_common_params
 def series_codes(ctx: typer.Context):
-    res = fetch_with_ctx(ctx, f"seriesCodes")
+    res = fetch_with_ctx(ctx, "seriesCodes")
     print_response_with_ctx(ctx, res)

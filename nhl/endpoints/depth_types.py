@@ -9,5 +9,5 @@ app = typer.Typer(help="List all possible depth types for the stats leader endpo
 @app.callback(invoke_without_command=True, rich_help_panel="Configurations Commands")
 @include_common_params
 def depth_types(ctx: typer.Context):
-    res = fetch_with_ctx(ctx, f"depthTypes")
+    res = fetch_with_ctx(ctx, "depthTypes")
     print_response_with_ctx(ctx, res)

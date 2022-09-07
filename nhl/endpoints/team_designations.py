@@ -9,5 +9,5 @@ app = typer.Typer(help="List all possible team designations.")
 @app.callback(invoke_without_command=True, rich_help_panel="Configurations Commands")
 @include_common_params
 def team_designations(ctx: typer.Context):
-    res = fetch_with_ctx(ctx, f"teamDesignations")
+    res = fetch_with_ctx(ctx, "teamDesignations")
     print_response_with_ctx(ctx, res)

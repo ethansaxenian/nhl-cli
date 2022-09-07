@@ -18,8 +18,8 @@ merge-args = "^0.1.4"
 typer = "^0.6.1"
 
 [tool.poetry.group.dev.dependencies]
-flake8 = "^5.0.4"
 black = "^22.8.0"
+flake8 = "^5.0.4"
 
 [tool.poetry.extras]
 rich = ['rich']
