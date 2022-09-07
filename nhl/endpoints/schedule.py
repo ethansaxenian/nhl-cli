@@ -8,7 +8,7 @@ from nhl.utils.context import include_common_params
 from nhl.utils.expands import ScheduleExpands
 from nhl.utils.helpers import (
     datetime_to_str,
-    fetch,
+    fetch_with_ctx,
     print_response_with_ctx,
     season_to_str,
 )
@@ -56,5 +56,5 @@ def schedule(
     if len(team_id) > 0:
         query_params.append(("teamId", ",".join(team_id)))
 
-    res = fetch(f"schedule", query_params)
-    print_response_with_ctx(res, ctx)
+    res = fetch_with_ctx(ctx, f"schedule", query_params)
+    print_response_with_ctx(ctx, res)

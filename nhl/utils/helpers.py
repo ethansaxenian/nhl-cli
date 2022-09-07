@@ -29,6 +29,13 @@ def fetch(path: str, query_args: Optional[QueryArgs] = None) -> Response:
     return requests.get(url)
 
 
+def fetch_with_ctx(
+    ctx: typer.Context, path: str, query_args: Optional[QueryArgs] = None
+):
+    query_args = query_args or []
+    return fetch(path, query_args + ([("locale", ctx.obj.locale)]))
+
+
 def print_response(
     response: Response,
     pretty: bool = False,
@@ -41,7 +48,7 @@ def print_response(
     echo(response_json, no_colors)
 
 
-def print_response_with_ctx(response: Response, ctx: typer.Context):
+def print_response_with_ctx(ctx: typer.Context, response: Response):
     print_response(
         response,
         pretty=ctx.obj.pretty,

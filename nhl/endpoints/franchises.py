@@ -1,7 +1,7 @@
 import typer
 
 from nhl.utils.context import include_common_params
-from nhl.utils.helpers import fetch, print_response_with_ctx
+from nhl.utils.helpers import fetch_with_ctx, print_response_with_ctx
 
 app = typer.Typer(help="Get information about NHL franchises.")
 
@@ -13,5 +13,5 @@ FranchiseId = typer.Argument(
 @app.callback(invoke_without_command=True)
 @include_common_params
 def franchises(ctx: typer.Context, id: str = FranchiseId):
-    res = fetch(f"franchises/{id}")
-    print_response_with_ctx(res, ctx)
+    res = fetch_with_ctx(ctx, f"franchises/{id}")
+    print_response_with_ctx(ctx, res)

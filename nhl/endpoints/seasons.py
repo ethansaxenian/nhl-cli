@@ -3,7 +3,7 @@ import typer
 from nhl.utils.callbacks import validate_season
 from nhl.utils.constants import DEFAULT_SEASON, SeasonType, YEAR_FORMAT
 from nhl.utils.context import include_common_params
-from nhl.utils.helpers import fetch, print_response_with_ctx, season_to_str
+from nhl.utils.helpers import fetch_with_ctx, print_response_with_ctx, season_to_str
 
 app = typer.Typer(help="Get information about NHL seasons.")
 
@@ -28,5 +28,5 @@ def seasons(
     else:
         season_str = season_to_str(year)
 
-    res = fetch(f"seasons/{season_str}")
-    print_response_with_ctx(res, ctx)
+    res = fetch_with_ctx(ctx, f"seasons/{season_str}")
+    print_response_with_ctx(ctx, res)

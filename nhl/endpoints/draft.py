@@ -5,7 +5,7 @@ import typer
 
 from nhl.utils.constants import YEAR_FORMAT
 from nhl.utils.context import include_common_params
-from nhl.utils.helpers import datetime_to_str, fetch, print_response_with_ctx
+from nhl.utils.helpers import datetime_to_str, fetch_with_ctx, print_response_with_ctx
 
 app = typer.Typer(help="Get round-by-round data for the NHL Entry Draft.")
 
@@ -21,5 +21,5 @@ def draft(
         show_default="Shows the current year's draft.",
     ),
 ):
-    res = fetch(f"draft/{datetime_to_str(year, YEAR_FORMAT)}")
-    print_response_with_ctx(res, ctx)
+    res = fetch_with_ctx(ctx, f"draft/{datetime_to_str(year, YEAR_FORMAT)}")
+    print_response_with_ctx(ctx, res)
