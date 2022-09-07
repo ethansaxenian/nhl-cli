@@ -44,7 +44,7 @@ $ nhl [OPTIONS] COMMAND [ARGS]...
 * `schedule-types`: List all possible schedule types.
 * `seasons`: Get information about NHL seasons.
 * `series-codes`: List all possible series codes.
-* `site-language`: Lists all possible {language}_{site} params..
+* `site-language`: Lists all possible {language}_{site} params.
 * `standings`: Get information about standings.
 * `standings-types`: List all standings types.
 * `stat-types`: List all stat types.
@@ -73,7 +73,8 @@ $ nhl awards [OPTIONS] [ID] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
-* `-e, --expand [awards.person|awards.team|awards.results]`: See 'nhl configurations expands' for details.  [default: ]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
+* `-e, --expand [awards.person|awards.team|awards.results]`: See 'nhl expands' for details.  [default: ]
 * `--help`: Show this message and exit.
 
 ## `nhl conferences`
@@ -95,6 +96,7 @@ $ nhl conferences [OPTIONS] [ID] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl configurations`
@@ -112,6 +114,7 @@ $ nhl configurations [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl depth-types`
@@ -129,6 +132,7 @@ $ nhl depth-types [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl divisions`
@@ -150,7 +154,8 @@ $ nhl divisions [OPTIONS] [ID] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
-* `-e, --expand [division.conference]`: See 'nhl configurations expands' for details.  [default: ]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
+* `-e, --expand [division.conference]`: See 'nhl expands' for details.  [default: ]
 * `--help`: Show this message and exit.
 
 ## `nhl draft`
@@ -172,6 +177,7 @@ $ nhl draft [OPTIONS] [YEAR]:[%Y] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl event-types`
@@ -189,6 +195,7 @@ $ nhl event-types [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl expands`
@@ -206,6 +213,7 @@ $ nhl expands [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl franchises`
@@ -227,6 +235,7 @@ $ nhl franchises [OPTIONS] [ID] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl game-status`
@@ -244,6 +253,7 @@ $ nhl game-status [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl game-types`
@@ -261,6 +271,7 @@ $ nhl game-types [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl image-sizes`
@@ -278,6 +289,7 @@ $ nhl image-sizes [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl image-types`
@@ -295,6 +307,7 @@ $ nhl image-types [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl languages`
@@ -312,6 +325,7 @@ $ nhl languages [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl league-leader-types`
@@ -329,6 +343,7 @@ $ nhl league-leader-types [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl performer-types`
@@ -346,6 +361,7 @@ $ nhl performer-types [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl platforms`
@@ -363,6 +379,7 @@ $ nhl platforms [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl play-types`
@@ -380,6 +397,7 @@ $ nhl play-types [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl play-types-player`
@@ -397,6 +415,7 @@ $ nhl play-types-player [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl player-status`
@@ -414,6 +433,7 @@ $ nhl player-status [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl positions`
@@ -431,6 +451,7 @@ $ nhl positions [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl power-play-strength`
@@ -448,6 +469,7 @@ $ nhl power-play-strength [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl prospect-categories`
@@ -465,6 +487,7 @@ $ nhl prospect-categories [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl prospects`
@@ -486,6 +509,7 @@ $ nhl prospects [OPTIONS] [ID] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl roster-statuses`
@@ -503,6 +527,7 @@ $ nhl roster-statuses [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl roster-types`
@@ -520,6 +545,7 @@ $ nhl roster-types [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl schedule`
@@ -537,7 +563,8 @@ $ nhl schedule [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
-* `-e, --expand [schedule.linescore|schedule.scoringplays|schedule.decisions|schedule.teams|schedule.ticket|schedule.venue|schedule.broadcasts|schedule.broadcasts.all|schedule.radioBroadcasts|schedule.metadata|schedule.game.content.all|schedule.game.content.media.all|schedule.game.content.editorial.all|schedule.game.content.editorial.preview|schedule.game.content.editorial.recap|schedule.game.content.editorial.articles|schedule.game.content.media.epg|schedule.game.content.media.milestones|schedule.game.content.highlights.all|schedule.game.content.highlights.scoreboard|schedule.game.content.highlights.gamecenter|schedule.game.content.highlights.milestone|schedule.game.seriesSummary]`: See 'nhl configurations expands' for details.  [default: ]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
+* `-e, --expand [schedule.linescore|schedule.scoringplays|schedule.decisions|schedule.teams|schedule.ticket|schedule.venue|schedule.broadcasts|schedule.broadcasts.all|schedule.radioBroadcasts|schedule.metadata|schedule.game.content.all|schedule.game.content.media.all|schedule.game.content.editorial.all|schedule.game.content.editorial.preview|schedule.game.content.editorial.recap|schedule.game.content.editorial.articles|schedule.game.content.media.epg|schedule.game.content.media.milestones|schedule.game.content.highlights.all|schedule.game.content.highlights.scoreboard|schedule.game.content.highlights.gamecenter|schedule.game.content.highlights.milestone|schedule.game.seriesSummary]`: See 'nhl expands' for details.  [default: ]
 * `--team-id TEXT`: Limit results to a specific team(s).  [default: ]
 * `--date [%Y-%m-%d]`: Single defined date for the search.
 * `--start-date [%Y-%m-%d]`: Start date for the search.
@@ -561,6 +588,7 @@ $ nhl schedule-types [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl seasons`
@@ -582,6 +610,7 @@ $ nhl seasons [OPTIONS] [YEAR]... COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--current`: Show the current season.  [default: False]
 * `--help`: Show this message and exit.
 
@@ -600,11 +629,12 @@ $ nhl series-codes [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl site-language`
 
-Lists all possible {language}_{site} params..
+Lists all possible {language}_{site} params.
 
 **Usage**:
 
@@ -617,6 +647,7 @@ $ nhl site-language [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl standings`
@@ -634,7 +665,8 @@ $ nhl standings [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
-* `-e, --expand [standings.team|standings.division|standings.conference|standings.record|standings.record.division|standings.record.conference|standings.record.overall]`: See 'nhl configurations expands' for details.  [default: ]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
+* `-e, --expand [standings.team|standings.division|standings.conference|standings.record|standings.record.division|standings.record.conference|standings.record.overall]`: See 'nhl expands' for details.  [default: ]
 * `--season <DATETIME DATETIME>...`: Specify the season.  [default: (Uses the current season.)]
 * `--help`: Show this message and exit.
 
@@ -653,6 +685,7 @@ $ nhl standings-types [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl stat-types`
@@ -670,6 +703,7 @@ $ nhl stat-types [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl team-designations`
@@ -687,6 +721,7 @@ $ nhl team-designations [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl teams`
@@ -708,7 +743,8 @@ $ nhl teams [OPTIONS] [ID] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
-* `-e, --expand [team.league|team.stats|team.roster|team.division|team.conference|team.franchise|team.leaders|team.schedule.next|team.schedule.previous|team.ticket|team.content.home.all|team.record|team.playoffs|team.name|team.social|team.deviceProperties|team.content.sections]`: See 'nhl configurations expands' for details.  [default: ]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
+* `-e, --expand [team.league|team.stats|team.roster|team.division|team.conference|team.franchise|team.leaders|team.schedule.next|team.schedule.previous|team.ticket|team.content.home.all|team.record|team.playoffs|team.name|team.social|team.deviceProperties|team.content.sections]`: See 'nhl expands' for details.  [default: ]
 * `--season <DATETIME DATETIME>...`: Specify the season.  [default: (Uses the current season.)]
 * `--team-id TEXT`: Can specify multiple team ids.  [default: ]
 * `--roster`: Include the entire roster of a team.  [default: False]
@@ -730,6 +766,7 @@ $ nhl tournament-types [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
 
 ## `nhl tournaments`
@@ -747,7 +784,8 @@ $ nhl tournaments [OPTIONS] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
-* `-e, --expand [round.series]`: See 'nhl configurations expands' for details.  [default: ]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
+* `-e, --expand [round.series]`: See 'nhl expands' for details.  [default: ]
 * `--season <DATETIME DATETIME>...`: Specify the season.  [default: (Uses the current season.)]
 * `--help`: Show this message and exit.
 
@@ -770,4 +808,5 @@ $ nhl venues [OPTIONS] [ID] COMMAND [ARGS]...
 * `-p, --pretty`: Format output.  [default: False]
 * `-s, --sort-keys`: Sort output.  [default: False]
 * `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages for details'  [default: en_US]
 * `--help`: Show this message and exit.
