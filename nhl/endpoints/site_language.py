@@ -2,11 +2,12 @@ import typer
 
 from nhl.utils.helpers import fetch, include_common_params, print_response_with_ctx
 
-app = typer.Typer(help="List all configuration endpoints")
+app = typer.Typer(help="Lists all possible {language}_{site} params.")
 
 
 @app.callback(invoke_without_command=True)
 @include_common_params
-def configurations(ctx: typer.Context):
-    res = fetch(f"configurations")
+def site_language(ctx: typer.Context):
+    res = fetch(f"siteLanguage")
     print_response_with_ctx(res, ctx)
+    

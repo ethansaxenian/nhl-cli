@@ -2,11 +2,12 @@ import typer
 
 from nhl.utils.helpers import fetch, include_common_params, print_response_with_ctx
 
-app = typer.Typer(help="List all configuration endpoints")
+app = typer.Typer(help="List all expands")
 
 
 @app.callback(invoke_without_command=True)
 @include_common_params
-def configurations(ctx: typer.Context):
-    res = fetch(f"configurations")
+def expands(ctx: typer.Context):
+    res = fetch(f"expands")
     print_response_with_ctx(res, ctx)
+    

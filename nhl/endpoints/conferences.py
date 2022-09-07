@@ -1,7 +1,6 @@
 import typer
 
-from nhl.utils.helpers import fetch, print_response
-from nhl.utils.options import NoColors, PrettyFormat, SortKeys
+from nhl.utils.helpers import fetch, include_common_params, print_response_with_ctx
 
 app = typer.Typer(help="Get information about NHL conferences.")
 
@@ -9,11 +8,7 @@ ConferenceId = typer.Argument("", help="Returns information for a single confere
 
 
 @app.callback(invoke_without_command=True)
-def conferences(
-    id: str = ConferenceId,
-    pretty: bool = PrettyFormat,
-    sort_keys: bool = SortKeys,
-    no_colors: bool = NoColors,
-):
+@include_common_params
+def conferences(ctx: typer.Context, id: str = ConferenceId):
     res = fetch(f"conferences/{id}")
-    print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
+    print_response_with_ctx(res, ctx)
