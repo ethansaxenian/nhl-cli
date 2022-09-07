@@ -1,26 +1,20 @@
 import typer
 
 from nhl.utils.constants import DEFAULT_SEASON, SeasonType
+from nhl.utils.context import include_common_params
 from nhl.utils.expands import StandingsExpands
-from nhl.utils.helpers import fetch, print_response, season_to_str
-from nhl.utils.options import (
-    ExpandOption,
-    NoColors,
-    PrettyFormat,
-    SeasonOption,
-    SortKeys,
-)
+from nhl.utils.helpers import fetch_with_ctx, print_response_with_ctx, season_to_str
+from nhl.utils.options import ExpandOption, SeasonOption
 
 app = typer.Typer(help="Get information about standings.")
 
 
 @app.callback(invoke_without_command=True)
+@include_common_params
 def standings(
+    ctx: typer.Context,
     expand: list[StandingsExpands] = ExpandOption,
     season: SeasonType = SeasonOption,
-    pretty: bool = PrettyFormat,
-    sort_keys: bool = SortKeys,
-    no_colors: bool = NoColors,
 ):
     query_params = []
     for modifier in expand:
@@ -28,5 +22,5 @@ def standings(
     if season != DEFAULT_SEASON:
         query_params.append(("season", season_to_str(season)))
 
-    res = fetch("standings", query_params)
-    print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
+    res = fetch_with_ctx(ctx, "standings", query_params)
+    print_response_with_ctx(ctx, res)

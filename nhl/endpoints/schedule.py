@@ -4,21 +4,25 @@ from typing import Optional
 import typer
 
 from nhl.utils.constants import DATE_FORMAT, DEFAULT_SEASON, SeasonType
+from nhl.utils.context import include_common_params
 from nhl.utils.expands import ScheduleExpands
-from nhl.utils.helpers import datetime_to_str, fetch, print_response, season_to_str
-from nhl.utils.options import (
-    ExpandOption,
-    NoColors,
-    PrettyFormat,
-    SeasonOption,
-    SortKeys,
+from nhl.utils.helpers import (
+    datetime_to_str,
+    fetch_with_ctx,
+    print_response_with_ctx,
+    season_to_str,
 )
+from nhl.utils.options import ExpandOption, SeasonOption
 
-app = typer.Typer(help="Get information about the schedule.")
+app = typer.Typer(
+    help="Get information about the schedule. By default, returns results for the current day."
+)
 
 
 @app.callback(invoke_without_command=True)
+@include_common_params
 def schedule(
+    ctx: typer.Context,
     expand: list[ScheduleExpands] = ExpandOption,
     team_id: list[str] = typer.Option([], help="Limit results to a specific team(s)."),
     date: Optional[datetime] = typer.Option(
@@ -36,9 +40,6 @@ def schedule(
         help="Restricts results to certain game types. See 'nhl configurations game-types' for options.",
         show_default="Includes all game types.",
     ),
-    pretty: bool = PrettyFormat,
-    sort_keys: bool = SortKeys,
-    no_colors: bool = NoColors,
 ):
     query_params = []
     for modifier in expand:
@@ -55,5 +56,5 @@ def schedule(
     if len(team_id) > 0:
         query_params.append(("teamId", ",".join(team_id)))
 
-    res = fetch(f"schedule", query_params)
-    print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
+    res = fetch_with_ctx(ctx, f"schedule", query_params)
+    print_response_with_ctx(ctx, res)

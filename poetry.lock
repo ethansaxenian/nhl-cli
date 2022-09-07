@@ -99,6 +99,14 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
+name = "merge-args"
+version = "0.1.4"
+description = "Merge signatures of two functions with Advanced Hackery."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "mypy-extensions"
 version = "0.4.3"
 description = "Experimental type system extensions for programs checked with the mypy typechecker."
@@ -238,7 +246,7 @@ rich = ["rich"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "f9d62d7320afe4fa1a0bdcda2d48accd20cea40733678543e4d74cc447116f96"
+content-hash = "bea7fad704fe9d1b81788e06c0fe2d631beb81f741a6cd8d70b7f11e4158bae0"
 
 [metadata.files]
 black = [
@@ -297,6 +305,10 @@ idna = [
 mccabe = [
     {file = "mccabe-0.7.0-py2.py3-none-any.whl", hash = "sha256:6c2d30ab6be0e4a46919781807b4f0d834ebdd6c6e3dca0bda5a15f863427b6e"},
     {file = "mccabe-0.7.0.tar.gz", hash = "sha256:348e0240c33b60bbdf4e523192ef919f28cb2c3d7d5c7794f74009290f236325"},
+]
+merge-args = [
+    {file = "merge_args-0.1.4-py2.py3-none-any.whl", hash = "sha256:96b76d7141dda4bb2571f571a5794701a1ff0c3b1a09c0bc69fa8764ee1858c3"},
+    {file = "merge_args-0.1.4.tar.gz", hash = "sha256:79b01449801757f6ef2a24520b90fa270bc1a5296adf731a899afa950e6f1545"},
 ]
 mypy-extensions = [
     {file = "mypy_extensions-0.4.3-py2.py3-none-any.whl", hash = "sha256:090fedd75945a69ae91ce1303b5824f428daf5a028d2f6ab8a299250a846f15d"},

@@ -2,14 +2,16 @@ import typer
 
 from nhl.utils.callbacks import validate_season
 from nhl.utils.constants import DEFAULT_SEASON, SeasonType, YEAR_FORMAT
-from nhl.utils.helpers import fetch, print_response, season_to_str
-from nhl.utils.options import NoColors, PrettyFormat, SortKeys
+from nhl.utils.context import include_common_params
+from nhl.utils.helpers import fetch_with_ctx, print_response_with_ctx, season_to_str
 
 app = typer.Typer(help="Get information about NHL seasons.")
 
 
 @app.callback(invoke_without_command=True)
+@include_common_params
 def seasons(
+    ctx: typer.Context,
     year: SeasonType = typer.Argument(
         DEFAULT_SEASON,
         formats=[YEAR_FORMAT],
@@ -18,9 +20,6 @@ def seasons(
         callback=validate_season,
     ),
     current: bool = typer.Option(False, "--current", help="Show the current season."),
-    pretty: bool = PrettyFormat,
-    sort_keys: bool = SortKeys,
-    no_colors: bool = NoColors,
 ):
     if current:
         season_str = "current"
@@ -29,5 +28,5 @@ def seasons(
     else:
         season_str = season_to_str(year)
 
-    res = fetch(f"seasons/{season_str}")
-    print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
+    res = fetch_with_ctx(ctx, f"seasons/{season_str}")
+    print_response_with_ctx(ctx, res)

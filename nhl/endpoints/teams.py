@@ -1,21 +1,18 @@
 import typer
 
 from nhl.utils.constants import DEFAULT_SEASON, SeasonType
+from nhl.utils.context import include_common_params
 from nhl.utils.expands import TeamExpands
-from nhl.utils.helpers import fetch, print_response, season_to_str
-from nhl.utils.options import (
-    ExpandOption,
-    NoColors,
-    PrettyFormat,
-    SeasonOption,
-    SortKeys,
-)
+from nhl.utils.helpers import fetch_with_ctx, print_response_with_ctx, season_to_str
+from nhl.utils.options import ExpandOption, SeasonOption
 
 app = typer.Typer(help="Get information about NHL teams.")
 
 
 @app.callback(invoke_without_command=True)
+@include_common_params
 def teams(
+    ctx: typer.Context,
     id: str = typer.Argument(
         "", help="Returns information for a single team instead of the entire league."
     ),
@@ -33,9 +30,6 @@ def teams(
             "(Note: Has no effect if --roster option is set.)"
         ),
     ),
-    pretty: bool = PrettyFormat,
-    sort_keys: bool = SortKeys,
-    no_colors: bool = NoColors,
 ):
     if not id and (roster or stats):
         raise typer.BadParameter(
@@ -50,7 +44,9 @@ def teams(
     if season != DEFAULT_SEASON:
         query_params.append(("season", season_to_str(season)))
 
-    res = fetch(
-        f"teams/{id}/{'roster' if roster else 'stats' if stats else ''}", query_params
+    res = fetch_with_ctx(
+        ctx,
+        f"teams/{id}/{'roster' if roster else 'stats' if stats else ''}",
+        query_params,
     )
-    print_response(res, pretty=pretty, sort_keys=sort_keys, no_colors=no_colors)
+    print_response_with_ctx(ctx, res)
