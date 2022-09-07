@@ -1,6 +1,8 @@
 # NHL-CLI
 A command-line program to interact with the public NHL API.
 
+### [Documentation](./DOCS.md)
+
 ## Installation
 Make sure you have `poetry` [installed](https://python-poetry.org/docs/) on your machine. 
 
