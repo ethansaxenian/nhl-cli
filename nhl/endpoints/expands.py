@@ -1,6 +1,7 @@
 import typer
 
-from nhl.utils.helpers import fetch, include_common_params, print_response_with_ctx
+from nhl.utils.context import include_common_params
+from nhl.utils.helpers import fetch, print_response_with_ctx
 
 app = typer.Typer(help="List all expands.")
 
@@ -10,4 +11,3 @@ app = typer.Typer(help="List all expands.")
 def expands(ctx: typer.Context):
     res = fetch(f"expands")
     print_response_with_ctx(res, ctx)
-    

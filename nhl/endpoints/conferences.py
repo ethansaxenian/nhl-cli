@@ -1,6 +1,7 @@
 import typer
 
-from nhl.utils.helpers import fetch, include_common_params, print_response_with_ctx
+from nhl.utils.context import include_common_params
+from nhl.utils.helpers import fetch, print_response_with_ctx
 
 app = typer.Typer(help="Get information about NHL conferences.")
 

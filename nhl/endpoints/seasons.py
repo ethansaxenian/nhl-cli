@@ -2,12 +2,8 @@ import typer
 
 from nhl.utils.callbacks import validate_season
 from nhl.utils.constants import DEFAULT_SEASON, SeasonType, YEAR_FORMAT
-from nhl.utils.helpers import (
-    fetch,
-    include_common_params,
-    print_response_with_ctx,
-    season_to_str,
-)
+from nhl.utils.context import include_common_params
+from nhl.utils.helpers import fetch, print_response_with_ctx, season_to_str
 
 app = typer.Typer(help="Get information about NHL seasons.")
 

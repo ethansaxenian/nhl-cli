@@ -4,18 +4,15 @@ from typing import Optional
 import typer
 
 from nhl.utils.constants import DATE_FORMAT, DEFAULT_SEASON, SeasonType
+from nhl.utils.context import include_common_params
 from nhl.utils.expands import ScheduleExpands
 from nhl.utils.helpers import (
     datetime_to_str,
     fetch,
-    include_common_params,
     print_response_with_ctx,
     season_to_str,
 )
-from nhl.utils.options import (
-    ExpandOption,
-    SeasonOption,
-)
+from nhl.utils.options import ExpandOption, SeasonOption
 
 app = typer.Typer(
     help="Get information about the schedule. By default, returns results for the current day."

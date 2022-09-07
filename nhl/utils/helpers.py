@@ -1,15 +1,12 @@
 import json
-from dataclasses import dataclass
 from datetime import datetime
-from typing import Callable, Optional
+from typing import Optional
 
 import requests
 import typer
-from merge_args import merge_args
 from requests import Response
 
 from nhl.utils.constants import API_BASE_URL, QueryArgs, SeasonType, YEAR_FORMAT
-from nhl.utils.options import NoColors, PrettyFormat, SortKeys
 
 
 def echo(message: str, disable_rich_output: bool = True):
@@ -62,26 +59,3 @@ def datetime_to_str(time: Optional[datetime], format_str: str) -> str:
         return time.strftime(format_str)
     except AttributeError:
         return ""
-
-
-@dataclass
-class Commons:
-    pretty: bool
-    sort_keys: bool
-    no_colors: bool
-
-
-def include_common_params(func: Callable) -> Callable:
-    @merge_args(func)
-    def wrapper(
-        ctx: typer.Context,
-        pretty: bool = PrettyFormat,
-        sort_keys: bool = SortKeys,
-        no_colors: bool = NoColors,
-        **kwargs,
-    ):
-        """Setup for finding city."""
-        ctx.obj = Commons(pretty, sort_keys, no_colors)
-        return func(ctx=ctx, **kwargs)
-
-    return wrapper

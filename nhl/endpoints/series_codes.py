@@ -1,6 +1,7 @@
 import typer
 
-from nhl.utils.helpers import fetch, include_common_params, print_response_with_ctx
+from nhl.utils.context import include_common_params
+from nhl.utils.helpers import fetch, print_response_with_ctx
 
 app = typer.Typer(help="List all possible series codes.")
 
@@ -10,4 +11,3 @@ app = typer.Typer(help="List all possible series codes.")
 def series_codes(ctx: typer.Context):
     res = fetch(f"seriesCodes")
     print_response_with_ctx(res, ctx)
-    
