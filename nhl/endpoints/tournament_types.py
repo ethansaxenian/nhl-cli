@@ -2,7 +2,7 @@ import typer
 
 from nhl.utils.helpers import fetch, include_common_params, print_response_with_ctx
 
-app = typer.Typer(help="List all possible tournament types")
+app = typer.Typer(help="List all possible tournament types.")
 
 
 @app.callback(invoke_without_command=True, rich_help_panel="Configurations Commands")
@@ -10,3 +10,4 @@ app = typer.Typer(help="List all possible tournament types")
 def tournament_types(ctx: typer.Context):
     res = fetch(f"tournamentTypes")
     print_response_with_ctx(res, ctx)
+    

@@ -16,41 +16,41 @@ $ nhl [OPTIONS] COMMAND [ARGS]...
 
 * `awards`: Get information about awards.
 * `conferences`: Get information about NHL conferences.
-* `configurations`: List all configuration endpoints
+* `configurations`: List all configuration endpoints.
 * `depth-types`: List all possible depth types for the stats...
 * `divisions`: Get information about NHL divisions.
 * `draft`: Get round-by-round data for the NHL Entry...
-* `event-types`: List all possible event types
-* `expands`: List all expands
+* `event-types`: List all possible event types.
+* `expands`: List all expands.
 * `franchises`: Get information about NHL franchises.
-* `game-status`: List all status types
-* `game-types`: List all game types
-* `image-sizes`: List all possible image sizes for the logos
-* `image-types`: List all possible image types for the logos
-* `languages`: List all support languages
-* `league-leader-types`: List all possible player league leader types
-* `performer-types`: List all possible performer types
-* `platforms`: List all possible platforms
-* `play-types`: List all play types
-* `play-types-player`: List all play types for player
-* `player-status`: List all the player status options
-* `positions`: List all possible positions
-* `power-play-strength`: List all possible platforms
-* `prospect-categories`: List all possible draft prospect categories
+* `game-status`: List all status types.
+* `game-types`: List all game types.
+* `image-sizes`: List all possible image sizes for the logos.
+* `image-types`: List all possible image types for the logos.
+* `languages`: List all support languages.
+* `league-leader-types`: List all possible player league leader types.
+* `performer-types`: List all possible performer types.
+* `platforms`: List all possible platforms.
+* `play-types`: List all play types.
+* `play-types-player`: List all play types for player.
+* `player-status`: List all the player status options.
+* `positions`: List all possible positions.
+* `power-play-strength`: List all possible platforms.
+* `prospect-categories`: List all possible draft prospect categories.
 * `prospects`: Get information about NHL Entry Draft...
-* `roster-statuses`: List all possible hockey roster statuses
-* `roster-types`: List all possible roster types
+* `roster-statuses`: List all possible hockey roster statuses.
+* `roster-types`: List all possible roster types.
 * `schedule`: Get information about the schedule.
-* `schedule-types`: List all possible schedule types
+* `schedule-types`: List all possible schedule types.
 * `seasons`: Get information about NHL seasons.
-* `series-codes`: List all possible series codes
-* `site-language`: Lists all possible {language}_{site} params.
+* `series-codes`: List all possible series codes.
+* `site-language`: Lists all possible {language}_{site} params..
 * `standings`: Get information about standings.
-* `standings-types`: List all standings types
-* `stat-types`: List all stat types
-* `team-designations`: List all possible team designations
+* `standings-types`: List all standings types.
+* `stat-types`: List all stat types.
+* `team-designations`: List all possible team designations.
 * `teams`: Get information about NHL teams.
-* `tournament-types`: List all possible tournament types
+* `tournament-types`: List all possible tournament types.
 * `tournaments`: Get information about tournaments
 * `venues`: Get information about venues.
 
@@ -99,7 +99,7 @@ $ nhl conferences [OPTIONS] [ID] COMMAND [ARGS]...
 
 ## `nhl configurations`
 
-List all configuration endpoints
+List all configuration endpoints.
 
 **Usage**:
 
@@ -116,7 +116,7 @@ $ nhl configurations [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl depth-types`
 
-List all possible depth types for the stats leader endpoint
+List all possible depth types for the stats leader endpoint.
 
 **Usage**:
 
@@ -176,7 +176,7 @@ $ nhl draft [OPTIONS] [YEAR]:[%Y] COMMAND [ARGS]...
 
 ## `nhl event-types`
 
-List all possible event types
+List all possible event types.
 
 **Usage**:
 
@@ -193,7 +193,7 @@ $ nhl event-types [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl expands`
 
-List all expands
+List all expands.
 
 **Usage**:
 
@@ -231,7 +231,7 @@ $ nhl franchises [OPTIONS] [ID] COMMAND [ARGS]...
 
 ## `nhl game-status`
 
-List all status types
+List all status types.
 
 **Usage**:
 
@@ -248,7 +248,7 @@ $ nhl game-status [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl game-types`
 
-List all game types
+List all game types.
 
 **Usage**:
 
@@ -265,7 +265,7 @@ $ nhl game-types [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl image-sizes`
 
-List all possible image sizes for the logos
+List all possible image sizes for the logos.
 
 **Usage**:
 
@@ -282,7 +282,7 @@ $ nhl image-sizes [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl image-types`
 
-List all possible image types for the logos
+List all possible image types for the logos.
 
 **Usage**:
 
@@ -299,7 +299,7 @@ $ nhl image-types [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl languages`
 
-List all support languages
+List all support languages.
 
 **Usage**:
 
@@ -316,7 +316,7 @@ $ nhl languages [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl league-leader-types`
 
-List all possible player league leader types
+List all possible player league leader types.
 
 **Usage**:
 
@@ -333,7 +333,7 @@ $ nhl league-leader-types [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl performer-types`
 
-List all possible performer types
+List all possible performer types.
 
 **Usage**:
 
@@ -350,7 +350,7 @@ $ nhl performer-types [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl platforms`
 
-List all possible platforms
+List all possible platforms.
 
 **Usage**:
 
@@ -367,7 +367,7 @@ $ nhl platforms [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl play-types`
 
-List all play types
+List all play types.
 
 **Usage**:
 
@@ -384,7 +384,7 @@ $ nhl play-types [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl play-types-player`
 
-List all play types for player
+List all play types for player.
 
 **Usage**:
 
@@ -401,7 +401,7 @@ $ nhl play-types-player [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl player-status`
 
-List all the player status options
+List all the player status options.
 
 **Usage**:
 
@@ -418,7 +418,7 @@ $ nhl player-status [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl positions`
 
-List all possible positions
+List all possible positions.
 
 **Usage**:
 
@@ -435,7 +435,7 @@ $ nhl positions [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl power-play-strength`
 
-List all possible platforms
+List all possible platforms.
 
 **Usage**:
 
@@ -452,7 +452,7 @@ $ nhl power-play-strength [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl prospect-categories`
 
-List all possible draft prospect categories
+List all possible draft prospect categories.
 
 **Usage**:
 
@@ -490,7 +490,7 @@ $ nhl prospects [OPTIONS] [ID] COMMAND [ARGS]...
 
 ## `nhl roster-statuses`
 
-List all possible hockey roster statuses
+List all possible hockey roster statuses.
 
 **Usage**:
 
@@ -507,7 +507,7 @@ $ nhl roster-statuses [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl roster-types`
 
-List all possible roster types
+List all possible roster types.
 
 **Usage**:
 
@@ -548,7 +548,7 @@ $ nhl schedule [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl schedule-types`
 
-List all possible schedule types
+List all possible schedule types.
 
 **Usage**:
 
@@ -587,7 +587,7 @@ $ nhl seasons [OPTIONS] [YEAR]... COMMAND [ARGS]...
 
 ## `nhl series-codes`
 
-List all possible series codes
+List all possible series codes.
 
 **Usage**:
 
@@ -604,7 +604,7 @@ $ nhl series-codes [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl site-language`
 
-Lists all possible {language}_{site} params.
+Lists all possible {language}_{site} params..
 
 **Usage**:
 
@@ -640,7 +640,7 @@ $ nhl standings [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl standings-types`
 
-List all standings types
+List all standings types.
 
 **Usage**:
 
@@ -657,7 +657,7 @@ $ nhl standings-types [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl stat-types`
 
-List all stat types
+List all stat types.
 
 **Usage**:
 
@@ -674,7 +674,7 @@ $ nhl stat-types [OPTIONS] COMMAND [ARGS]...
 
 ## `nhl team-designations`
 
-List all possible team designations
+List all possible team designations.
 
 **Usage**:
 
@@ -717,7 +717,7 @@ $ nhl teams [OPTIONS] [ID] COMMAND [ARGS]...
 
 ## `nhl tournament-types`
 
-List all possible tournament types
+List all possible tournament types.
 
 **Usage**:
 
