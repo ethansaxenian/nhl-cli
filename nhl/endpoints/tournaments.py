@@ -1,16 +1,19 @@
 import typer
 
 from nhl.utils.constants import DEFAULT_SEASON, SeasonType
-from nhl.utils.context import include_common_params
 from nhl.utils.expands import RoundExpands
-from nhl.utils.helpers import fetch_with_ctx, print_response_with_ctx, season_to_str
-from nhl.utils.options import ExpandOption, SeasonOption
+from nhl.utils.helpers import (
+    fetch_with_context,
+    print_response_with_context,
+    season_to_str,
+)
+from nhl.utils.options import ExpandOption, SeasonOption, include_common_options
 
 app = typer.Typer(help="Get information about tournaments")
 
 
 @app.callback(invoke_without_command=True)
-@include_common_params
+@include_common_options
 def tournaments(
     ctx: typer.Context,
     expand: list[RoundExpands] = ExpandOption,
@@ -22,5 +25,5 @@ def tournaments(
     if season != DEFAULT_SEASON:
         query_params.append(("season", season_to_str(season)))
 
-    res = fetch_with_ctx(ctx, "tournaments/playoffs", query_params)
-    print_response_with_ctx(ctx, res)
+    res = fetch_with_context(ctx, "tournaments/playoffs", query_params)
+    print_response_with_context(ctx, res)

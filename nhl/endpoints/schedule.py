@@ -4,15 +4,14 @@ from typing import Optional
 import typer
 
 from nhl.utils.constants import DATE_FORMAT, DEFAULT_SEASON, SeasonType
-from nhl.utils.context import include_common_params
 from nhl.utils.expands import ScheduleExpands
 from nhl.utils.helpers import (
     datetime_to_str,
-    fetch_with_ctx,
-    print_response_with_ctx,
+    fetch_with_context,
+    print_response_with_context,
     season_to_str,
 )
-from nhl.utils.options import ExpandOption, SeasonOption
+from nhl.utils.options import ExpandOption, SeasonOption, include_common_options
 
 app = typer.Typer(
     help="Get information about the schedule. By default, returns results for the current day."
@@ -20,7 +19,7 @@ app = typer.Typer(
 
 
 @app.callback(invoke_without_command=True)
-@include_common_params
+@include_common_options
 def schedule(
     ctx: typer.Context,
     expand: list[ScheduleExpands] = ExpandOption,
@@ -56,5 +55,5 @@ def schedule(
     if len(team_id) > 0:
         query_params.append(("teamId", ",".join(team_id)))
 
-    res = fetch_with_ctx(ctx, "schedule", query_params)
-    print_response_with_ctx(ctx, res)
+    res = fetch_with_context(ctx, "schedule", query_params)
+    print_response_with_context(ctx, res)
