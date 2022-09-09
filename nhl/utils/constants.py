@@ -12,3 +12,5 @@ DEFAULT_SEASON: SeasonType = (datetime(1, 1, 1, 0, 0), datetime(1, 1, 1, 0, 0))
 YEAR_FORMAT = "%Y"
 
 DATE_FORMAT = "%Y-%m-%d"
+
+TIMECODE_FORMAT = "%Y%m%d_%H%M%S"

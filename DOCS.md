@@ -23,6 +23,7 @@ $ nhl [OPTIONS] COMMAND [ARGS]...
 * `event-types`: List all possible event types.
 * `expands`: List all expands.
 * `franchises`: Get information about NHL franchises.
+* `game`: Get data about an NHL game.
 * `game-status`: List all status types.
 * `game-types`: List all game types.
 * `image-sizes`: List all possible image sizes for the logos.
@@ -230,6 +231,116 @@ $ nhl franchises [OPTIONS] [ID] COMMAND [ARGS]...
 **Arguments**:
 
 * `[ID]`: Returns information for a single team instead of the entire league.  [default: ]
+
+**Options**:
+
+* `-p, --pretty`: Format output.  [default: False]
+* `-s, --sort-keys`: Sort output.  [default: False]
+* `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages' for details.  [default: en_US]
+* `--help`: Show this message and exit.
+
+## `nhl game`
+
+Get data about an NHL game.
+
+**Usage**:
+
+```console
+$ nhl game [OPTIONS] COMMAND [ARGS]...
+```
+
+**Options**:
+
+* `--help`: Show this message and exit.
+
+**Commands**:
+
+* `boxscore`: Get the boxscore for an NHL game.
+* `content`: Get editorials, video replays and photo...
+* `feed`: Get all available data for an NHL game.
+* `linescore`: Get the linescore for an NHL game.
+
+### `nhl game boxscore`
+
+Get the boxscore for an NHL game.
+
+**Usage**:
+
+```console
+$ nhl game boxscore [OPTIONS] ID
+```
+
+**Arguments**:
+
+* `ID`: ID for the game. The first 4 digits identify the season of the game (ie. 2017 for the 2017-2018 season). The next 2 digits give the type of game, where 01 = preseason, 02 = regular season, 03 = playoffs, 04 = all-star. The final 4 digits identify the specific game number. For regular season and preseason games, this ranges from 0001 to the number of games played. (1271 for seasons with 31 teams (2017 and onwards) and 1230 for seasons with 30 teams). For playoff games, the 2nd digit of the specific number gives the round of the playoffs, the 3rd digit specifies the matchup, and the 4th digit specifies the game (out of 7).  [required]
+
+**Options**:
+
+* `-p, --pretty`: Format output.  [default: False]
+* `-s, --sort-keys`: Sort output.  [default: False]
+* `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages' for details.  [default: en_US]
+* `--help`: Show this message and exit.
+
+### `nhl game content`
+
+Get editorials, video replays and photo highlights for an NHL game.
+
+**Usage**:
+
+```console
+$ nhl game content [OPTIONS] ID
+```
+
+**Arguments**:
+
+* `ID`: ID for the game. The first 4 digits identify the season of the game (ie. 2017 for the 2017-2018 season). The next 2 digits give the type of game, where 01 = preseason, 02 = regular season, 03 = playoffs, 04 = all-star. The final 4 digits identify the specific game number. For regular season and preseason games, this ranges from 0001 to the number of games played. (1271 for seasons with 31 teams (2017 and onwards) and 1230 for seasons with 30 teams). For playoff games, the 2nd digit of the specific number gives the round of the playoffs, the 3rd digit specifies the matchup, and the 4th digit specifies the game (out of 7).  [required]
+
+**Options**:
+
+* `-p, --pretty`: Format output.  [default: False]
+* `-s, --sort-keys`: Sort output.  [default: False]
+* `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages' for details.  [default: en_US]
+* `--help`: Show this message and exit.
+
+### `nhl game feed`
+
+Get all available data for an NHL game.
+
+**Usage**:
+
+```console
+$ nhl game feed [OPTIONS] ID
+```
+
+**Arguments**:
+
+* `ID`: ID for the game. The first 4 digits identify the season of the game (ie. 2017 for the 2017-2018 season). The next 2 digits give the type of game, where 01 = preseason, 02 = regular season, 03 = playoffs, 04 = all-star. The final 4 digits identify the specific game number. For regular season and preseason games, this ranges from 0001 to the number of games played. (1271 for seasons with 31 teams (2017 and onwards) and 1230 for seasons with 30 teams). For playoff games, the 2nd digit of the specific number gives the round of the playoffs, the 3rd digit specifies the matchup, and the 4th digit specifies the game (out of 7).  [required]
+
+**Options**:
+
+* `-p, --pretty`: Format output.  [default: False]
+* `-s, --sort-keys`: Sort output.  [default: False]
+* `-n, --no-colors`: Disable colored output.  [default: False]
+* `-l, --locale [en_US|fr_CA|es_ES|cs_CS|sv_SV|sk_SK|de_DE|ru_RU|fi_FI]`: Set the language of the output. See 'nhl site-languages' for details.  [default: en_US]
+* `--start-timecode [%Y%m%d_%H%M%S]`: Get data after a specific time. You can use this to return a small subset of data relating to game.
+* `--help`: Show this message and exit.
+
+### `nhl game linescore`
+
+Get the linescore for an NHL game.
+
+**Usage**:
+
+```console
+$ nhl game linescore [OPTIONS] ID
+```
+
+**Arguments**:
+
+* `ID`: ID for the game. The first 4 digits identify the season of the game (ie. 2017 for the 2017-2018 season). The next 2 digits give the type of game, where 01 = preseason, 02 = regular season, 03 = playoffs, 04 = all-star. The final 4 digits identify the specific game number. For regular season and preseason games, this ranges from 0001 to the number of games played. (1271 for seasons with 31 teams (2017 and onwards) and 1230 for seasons with 30 teams). For playoff games, the 2nd digit of the specific number gives the round of the playoffs, the 3rd digit specifies the matchup, and the 4th digit specifies the game (out of 7).  [required]
 
 **Options**:
 

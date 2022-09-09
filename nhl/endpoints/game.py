@@ -3,7 +3,9 @@ from typing import Optional
 
 import typer
 
+from nhl.utils.constants import TIMECODE_FORMAT
 from nhl.utils.helpers import (
+    datetime_to_str,
     fetch_with_context,
     print_response_with_context,
 )
@@ -34,13 +36,18 @@ def feed(
     id: str = GameId,
     start_timecode: Optional[datetime] = typer.Option(
         None,
-        formats=["%Y%m%d_%H%M%S"],
+        formats=[TIMECODE_FORMAT],
         help=(
             "Get data after a specific time. You can use this to return a small subset of data relating to game."
         ),
     ),
 ):
-    query_args = [("startTimecode", start_timecode)] if start_timecode else None
+    query_args = []
+    if start_timecode is not None:
+        query_args.append(
+            ("startTimecode", datetime_to_str(start_timecode, TIMECODE_FORMAT))
+        )
+
     res = fetch_with_context(
         ctx,
         f"game/{id}/feed/live/{'diffPatch' if start_timecode is not None else ''}",
