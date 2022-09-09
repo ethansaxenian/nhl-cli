@@ -4,9 +4,9 @@ from typing import Callable
 import typer
 from merge_args import merge_args
 
-from nhl.utils.callbacks import validate_season
 from nhl.utils.constants import DEFAULT_SEASON, YEAR_FORMAT
 from nhl.utils.enums import Locale
+from nhl.utils.helpers import validate_season
 
 ExpandOption = typer.Option(
     [],

@@ -6,7 +6,13 @@ import requests
 import typer
 from requests import Response
 
-from nhl.utils.constants import API_BASE_URL, QueryArgs, SeasonType, YEAR_FORMAT
+from nhl.utils.constants import (
+    API_BASE_URL,
+    DEFAULT_SEASON,
+    QueryArgs,
+    SeasonType,
+    YEAR_FORMAT,
+)
 
 
 def _print(message: str, disable_rich_output: bool = True):
@@ -73,3 +79,15 @@ def datetime_to_str(time: Optional[datetime], format_str: str) -> str:
         return time.strftime(format_str)
     except AttributeError:
         return ""
+
+
+def validate_season(value: SeasonType) -> SeasonType:
+    if value == DEFAULT_SEASON:
+        return value
+
+    if value[1].year - value[0].year != 1:
+        raise typer.BadParameter(
+            f"{value[0].strftime(YEAR_FORMAT)}-{value[1].strftime(YEAR_FORMAT)} is not a valid NHL season."
+        )
+
+    return value

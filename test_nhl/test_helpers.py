@@ -1,10 +1,18 @@
 from datetime import datetime
 
+import pytest
 import requests
 import responses
+import typer
 
-from nhl.utils.constants import API_BASE_URL, YEAR_FORMAT
-from nhl.utils.helpers import datetime_to_str, fetch, print_response, season_to_str
+from nhl.utils.constants import API_BASE_URL, DEFAULT_SEASON, YEAR_FORMAT
+from nhl.utils.helpers import (
+    datetime_to_str,
+    fetch,
+    print_response,
+    season_to_str,
+    validate_season,
+)
 
 
 @responses.activate
@@ -52,3 +60,32 @@ def test_datetime_to_str():
 def test_datetime_to_str_returns_none_with_no_datetime():
     datetime_str = datetime_to_str(None, "")
     assert datetime_str == ""
+
+
+def test_validate_season():
+    season = (datetime(2021, 1, 1), datetime(2022, 1, 1))
+    value = validate_season(season)
+    assert value == season
+
+
+def test_validate_season_with_default_season():
+    value = validate_season(DEFAULT_SEASON)
+    assert value == DEFAULT_SEASON
+
+
+def test_validate_season_raises_error_with_difference_of_two_years():
+    with pytest.raises(typer.BadParameter):
+        season = (datetime(2020, 1, 1), datetime(2022, 1, 1))
+        validate_season(season)
+
+
+def test_validate_season_raises_error_with_same_years():
+    with pytest.raises(typer.BadParameter):
+        season = (datetime(2022, 1, 1), datetime(2022, 1, 1))
+        validate_season(season)
+
+
+def test_validate_season_raises_error_with_reversed_years():
+    with pytest.raises(typer.BadParameter):
+        season = (datetime(2022, 1, 1), datetime(2021, 1, 1))
+        validate_season(season)

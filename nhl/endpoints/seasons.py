@@ -1,11 +1,11 @@
 import typer
 
-from nhl.utils.callbacks import validate_season
 from nhl.utils.constants import DEFAULT_SEASON, SeasonType, YEAR_FORMAT
 from nhl.utils.helpers import (
     fetch_with_context,
     print_response_with_context,
     season_to_str,
+    validate_season,
 )
 from nhl.utils.options import include_common_options
 
