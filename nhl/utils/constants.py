@@ -7,7 +7,7 @@ QueryArgs = list[tuple[str, str]]
 SeasonType = tuple[datetime, datetime]
 
 # use this as 'None' since Optional[tuple[datetime, datetime]] doesn't seem to work for a typer option type.
-DEFAULT_SEASON: SeasonType = (datetime(1, 1, 1, 0, 0), datetime(1, 1, 1, 0, 0))
+DEFAULT_SEASON: SeasonType = (datetime(1, 1, 1), datetime(1, 1, 1))
 
 YEAR_FORMAT = "%Y"
 
