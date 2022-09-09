@@ -6,9 +6,14 @@ from merge_args import merge_args
 
 from nhl.utils.callbacks import validate_season
 from nhl.utils.constants import DEFAULT_SEASON, YEAR_FORMAT
-from nhl.utils.locales import Locale
+from nhl.utils.enums import Locale
 
-ExpandOption = typer.Option([], "--expand", "-e", help="See 'nhl expands' for details.")
+ExpandOption = typer.Option(
+    [],
+    "--expand",
+    "-e",
+    help="Include additional information. See 'nhl expands' for details.",
+)
 
 SeasonOption = typer.Option(
     DEFAULT_SEASON,

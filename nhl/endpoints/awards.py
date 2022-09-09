@@ -1,6 +1,6 @@
 import typer
 
-from nhl.utils.expands import AwardsExpands
+from nhl.utils.enums import AwardsExpands
 from nhl.utils.helpers import fetch_with_context, print_response_with_context
 from nhl.utils.options import ExpandOption, include_common_options
 

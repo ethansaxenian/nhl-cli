@@ -4,7 +4,7 @@ from typing import Optional
 import typer
 
 from nhl.utils.constants import DATE_FORMAT, DEFAULT_SEASON, SeasonType
-from nhl.utils.expands import ScheduleExpands
+from nhl.utils.enums import ScheduleExpands
 from nhl.utils.helpers import (
     datetime_to_str,
     fetch_with_context,

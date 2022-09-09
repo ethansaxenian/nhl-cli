@@ -16,6 +16,7 @@ from nhl.endpoints import (
     image_types,
     languages,
     league_leader_types,
+    people,
     performer_types,
     platforms,
     play_types,
@@ -52,6 +53,7 @@ app.add_typer(conferences.app, name="conferences")
 app.add_typer(divisions.app, name="divisions")
 app.add_typer(draft.app, name="draft")
 app.add_typer(franchises.app, name="franchises")
+app.add_typer(people.app, name="people")
 app.add_typer(prospects.app, name="prospects")
 app.add_typer(teams.app, name="teams")
 app.add_typer(schedule.app, name="schedule")

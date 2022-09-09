@@ -1,7 +1,7 @@
 import typer
 
 from nhl.utils.constants import DEFAULT_SEASON, SeasonType
-from nhl.utils.expands import RoundExpands
+from nhl.utils.enums import RoundExpands
 from nhl.utils.helpers import (
     fetch_with_context,
     print_response_with_context,

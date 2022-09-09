@@ -1,6 +1,6 @@
 import typer
 
-from nhl.utils.expands import DivisionExpands
+from nhl.utils.enums import DivisionExpands
 from nhl.utils.helpers import (
     fetch_with_context,
     print_response_with_context,
