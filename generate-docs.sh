@@ -7,17 +7,19 @@ poetry add typer-cli
 
 # rich_help_panel throws an error when generating docs
 # so create a temporary copy of the cli and remove all occurrences
-TMP_DIR=tmp
-cp -r nhl $TMP_DIR
-RICH_HELP_PANEL_TEXT='rich_help_panel="(.*)"'
-grep -rlE $RICH_HELP_PANEL_TEXT $TMP_DIR | LC_ALL=C xargs sed -Ei "" "s/$RICH_HELP_PANEL_TEXT//g"
 
-# refactor tmp module imports
+TMP_DIR=tmp
+RICH_HELP_PANEL_TEXT='rich_help_panel="(.*)"'
 OLD_MODULE_IMPORT="^from nhl"
 TMP_MODULE_IMPORT="from $TMP_DIR"
-grep -rlE $OLD_MODULE_IMPORT $TMP_DIR | LC_ALL=C xargs sed -Ei "" "s/$OLD_MODULE_IMPORT/$TMP_MODULE_IMPORT/g"
 
-# generate the docs from the temporary cli and remove it
+echo "Copying nhl to $TMP_DIR..."
+cp -r nhl $TMP_DIR
+echo "Replacing '$RICH_HELP_PANEL_TEXT'..."
+grep -rlE "${RICH_HELP_PANEL_TEXT}" $TMP_DIR | LC_ALL=C xargs sed -Ei "" "s/$RICH_HELP_PANEL_TEXT//g"
+echo "Refactoring imports in $TMP_DIR..."
+grep -rlE "${OLD_MODULE_IMPORT}" $TMP_DIR | LC_ALL=C xargs sed -Ei "" "s/$OLD_MODULE_IMPORT/$TMP_MODULE_IMPORT/g"
+echo "Generating docs..."
 typer $TMP_DIR/main.py utils docs --name nhl --output DOCS.md
 rm -rf $TMP_DIR
 
