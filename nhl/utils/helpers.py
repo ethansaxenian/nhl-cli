@@ -27,11 +27,8 @@ def _print(message: str, disable_rich_output: bool = True):
 
 def fetch(endpoint: str, query_args: Optional[QueryArgs] = None) -> Response:
     """Performs a GET request to the NHL API with a specified endpoint and query arguments."""
-    query_str = (
-        ("?" + "&".join([f"{k}={v}" for k, v in query_args])) if query_args else ""
-    )
-    url = f"{API_BASE_URL}{endpoint}{query_str}"
-    return requests.get(url)
+    res = requests.get(f"{API_BASE_URL}/{endpoint}", query_args)
+    return res
 
 
 def fetch_with_context(

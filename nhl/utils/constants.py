@@ -1,6 +1,6 @@
 from datetime import datetime
 
-API_BASE_URL = "https://statsapi.web.nhl.com/api/v1/"
+API_BASE_URL = "https://statsapi.web.nhl.com/api/v1"
 
 QueryArgs = list[tuple[str, str]]
 
