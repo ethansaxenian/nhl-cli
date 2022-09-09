@@ -10,7 +10,7 @@ from nhl.endpoints import (
     event_types,
     expands,
     franchises,
-    game_status,
+    game, game_status,
     game_types,
     image_sizes,
     image_types,
@@ -53,6 +53,7 @@ app.add_typer(conferences.app, name="conferences")
 app.add_typer(divisions.app, name="divisions")
 app.add_typer(draft.app, name="draft")
 app.add_typer(franchises.app, name="franchises")
+app.add_typer(game.app, name="game")
 app.add_typer(people.app, name="people")
 app.add_typer(prospects.app, name="prospects")
 app.add_typer(teams.app, name="teams")
