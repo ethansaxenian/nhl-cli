@@ -37,7 +37,7 @@ optional = false
 python-versions = ">=3.6.0"
 
 [package.extras]
-unicode_backport = ["unicodedata2"]
+unicode-backport = ["unicodedata2"]
 
 [[package]]
 name = "click"
@@ -100,7 +100,7 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "merge-args"
-version = "0.1.4"
+version = "0.1.5"
 description = "Merge signatures of two functions with Advanced Hackery."
 category = "main"
 optional = false
@@ -177,7 +177,7 @@ urllib3 = ">=1.21.1,<1.27"
 
 [package.extras]
 socks = ["PySocks (>=1.5.6,!=1.5.7)"]
-use_chardet_on_py3 = ["chardet (>=3.0.2,<6)"]
+use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
 name = "rich"
@@ -246,7 +246,7 @@ rich = ["rich"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "bea7fad704fe9d1b81788e06c0fe2d631beb81f741a6cd8d70b7f11e4158bae0"
+content-hash = "1ec1c6124bd229c029f6e66ca5dd59a1cf90ef0518f08287744d723a8de9875e"
 
 [metadata.files]
 black = [
@@ -307,8 +307,8 @@ mccabe = [
     {file = "mccabe-0.7.0.tar.gz", hash = "sha256:348e0240c33b60bbdf4e523192ef919f28cb2c3d7d5c7794f74009290f236325"},
 ]
 merge-args = [
-    {file = "merge_args-0.1.4-py2.py3-none-any.whl", hash = "sha256:96b76d7141dda4bb2571f571a5794701a1ff0c3b1a09c0bc69fa8764ee1858c3"},
-    {file = "merge_args-0.1.4.tar.gz", hash = "sha256:79b01449801757f6ef2a24520b90fa270bc1a5296adf731a899afa950e6f1545"},
+    {file = "merge_args-0.1.5-py2.py3-none-any.whl", hash = "sha256:f296a2dd9156dd055e3f540f0fb5784b94933457a4e0e8d0031a763c26bf24a8"},
+    {file = "merge_args-0.1.5.tar.gz", hash = "sha256:ad37e6c4c7f1eadda5a0564b26ca7d56f8a37f232f5c5c46f9ef93d352757c23"},
 ]
 mypy-extensions = [
     {file = "mypy_extensions-0.4.3-py2.py3-none-any.whl", hash = "sha256:090fedd75945a69ae91ce1303b5824f428daf5a028d2f6ab8a299250a846f15d"},
